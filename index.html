@@ -1,0 +1,63 @@
+<!DOCTYPE html/javascript>
+<head>
+<meta charset="utf-8">
+<script src="lists.js"></script>
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+//		var nouns = [];
+//		var verbs = [];
+		
+/*
+$.ajax({
+    type: "GET",
+    url:"learOut.xml",
+	dataType: "xml",
+    success:function(xml) {
+        $(xml).find("sentence").each(function(){
+			$(this).find("word[pos='NN']").each(function(){
+				var noun = $(this).text();
+				nouns.push(noun);
+		});
+		});
+
+		$(xml).find("sentence").each(function(){
+			$(this).find("word[pos='VB']").each(function(){
+				var verb = $(this).text();
+				verbs.push(verb);
+
+				});
+		});
+*/
+$( document ).ready(function(){	
+    console.log(nouns)
+	console.log(verbs)
+	
+	var randVerb = verbs[Math.floor(Math.random() * verbs.length)];
+	var randNoun = nouns[Math.floor(Math.random() * nouns.length)];
+	$("#bandName").html(randVerb + " the " + randNoun)
+});
+/*
+	var nounArrayString = "[\""
+nouns.forEach(function(element, index, array){
+		nounArrayString = nounArrayString + String(element) + "\", \""
+	})
+nounArrayString = nounArrayString + "\"]"
+
+$("#nounArray").html(nounArrayString)
+*/
+
+//	}
+//	});
+
+
+</script>
+
+<body>
+
+<div id="bandName"></div>
+
+<div id="nounArray"></div>
+
+</body>
+</head>
+</html>
