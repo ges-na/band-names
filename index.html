@@ -3,21 +3,41 @@
 <meta charset="utf-8">
 <script src="lists.js"></script>
 <script src="jquery-1.11.3.min.js"></script>
+
 <script>
 
 $( document ).ready(function(){	
 	
-	var randVerb = verbs[Math.floor(Math.random() * verbs.length)];
-	var randNoun = nouns[Math.floor(Math.random() * nouns.length)];
-	$("#bandName").html(randVerb + " the " + randNoun)
-});
+	getRandItem = function(list){
+		return list[Math.floor(Math.random() * list.length)];
+	}
+	
+	var randVerb = getRandItem(verbs)
+	var randNoun = getRandItem(nouns);
+	$("#bandNameVerb").html(randVerb)
+	$("#bandNameNoun").html(randNoun)
 
+	$("#randomizeVerb").click(function(){
+		var randVerb2 = verbs[Math.floor(Math.random() * verbs.length)];
+		$("#bandNameVerb").html(randVerb2);
+	});
+	
+	$("#randomizeNoun").click(function(){
+		var randNoun2 = nouns[Math.floor(Math.random() * verbs.length)];
+		$("#bandNameNoun").html(randNoun2);
+	});
+});
 
 </script>
 
 <body>
 
-<div id="bandName"></div>
+<span id="bandNameVerb"></span>
+ the 
+<span id="bandNameNoun"></span>
+<div></div>
+<button id="randomizeVerb">Randomize Verb</button>
+<button id="randomizeNoun">Randomize Noun</button>
 
 </body>
 </head>
